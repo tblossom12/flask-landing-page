@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}{{ heading1 }}{% endblock %}
+
+{% block content %}
+<!-- Advertising label at top -->
+<div class="text-center text-muted mb-2" style="font-size: 0.9rem; letter-spacing: 1px;">Advertising Material</div>
+
+<!-- Logo -->
+<div class="text-center mb-4">
+  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" style="max-height: 120px;">
+</div>
+
+<!-- Two-column layout -->
+<div class="container" style="max-width: 1000px; font-family: 'Inter', sans-serif;">
+  <div class="row g-5 align-items-start">
+    <!-- Left: Headings & Paragraphs -->
+    <div class="col-md-6">
+      <h2 style="font-family: 'Inter', sans-serif;">{{ heading1 }}</h2>
+      <p>{{ paragraph1 }}</p>
+
+      <h2 class="mt-4" style="font-family: 'Inter', sans-serif;">{{ heading2 }}</h2>
+      <p>{{ paragraph2 }}</p>
+    </div>
+
+    <!-- Right: Contact Form in Card -->
+    <div class="col-md-6">
+        <h2 class="mb-3 section-heading">Contact Us</h2>
+        <div style="background: #f9f9f9; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+        <form method="POST">
+          {{ form.hidden_tag() }}
+          <div class="mb-3">{{ form.name.label(class="form-label") }}{{ form.name(class="form-control") }}</div>
+          <div class="mb-3">{{ form.email.label(class="form-label") }}{{ form.email(class="form-control") }}</div>
+          <div class="mb-3">{{ form.phone.label(class="form-label") }}{{ form.phone(class="form-control") }}</div>
+          <div class="mb-3">{{ form.claim.label(class="form-label") }}{{ form.claim(class="form-control", rows=3) }}</div>
+          <div class="d-grid"><button class="btn btn-primary" type="submit">Submit</button></div>
+        </form>
+        <p class="text-muted mt-2 small">By submitting, you consent to being contacted by Nilges Draher LLC via text, email, or phone.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Advertising label at bottom -->
+<div class="text-center text-muted mt-5" style="font-size: 0.9rem; letter-spacing: 1px;">Advertising Material</div>
+
+<!-- Footer -->
+<footer class="mt-4 pt-4 text-center border-top">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" style="max-height: 60px;">
+  <p class="mb-0 text-muted small">7034 Braucher St. NW, Suite B, North Canton, OH 44720</p>
+  <p class="mb-1 text-muted small">(234) 401-9130 · <a href="https://ohlaborlaw.com">ohlaborlaw.com</a></p>
+</footer>
+{% endblock %}

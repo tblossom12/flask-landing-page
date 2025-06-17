@@ -1,0 +1,103 @@
+/* GENERAL STYLES */
+body {
+    background-color: #eef3fa; /* soft blue-gray background */
+    color: #333333;           /* dark blue-gray text */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+    color: #0070C0; /* deep blue */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* PARAGRAPH TEXT */
+p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* FORM CARD CONTAINER */
+.container {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    margin-top: 40px;
+}
+
+/* FORM INPUTS */
+input[type="text"], input[type="email"], textarea, select {
+    border-radius: 6px;
+    border: 1px solid #cfd8dc;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #0070C0;
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+/* BUTTON STYLING */
+.btn-primary {
+    background-color: #0070C0;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 6px;
+    width: 100%;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0070C0;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+footer a {
+    color: #0070C0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.section-heading {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: #0070C0;
+  }
+
+form {
+  font-family: 'Inter', sans-serif;
+}
+
+.form-label {
+  font-weight: 600; /* bold label text */
+}
+
+.form-control {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  padding: 10px;
+}
+

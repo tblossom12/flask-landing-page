@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Create Landing Page{% endblock %}
+
+{% block content %}
+<div class="container py-4" style="max-width: 700px;">
+    <h2 class="mb-4">Create a New Landing Page</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.custom_path.label(class="form-label") }}
+            {{ form.custom_path(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.heading1.label(class="form-label") }}
+            {{ form.heading1(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.paragraph1.label(class="form-label") }}
+            {{ form.paragraph1(class="form-control", rows=3) }}
+        </div>
+        <div class="mb-3">
+            {{ form.heading2.label(class="form-label") }}
+            {{ form.heading2(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.paragraph2.label(class="form-label") }}
+            {{ form.paragraph2(class="form-control", rows=3) }}
+        </div>
+        <div>{{ form.submit(class="btn btn-primary w-100") }}</div>
+      </form>
+      <p class="text-center mt-4">
+        <a href="{{ url_for('create_ad') }}" class="btn btn-outline-secondary">Create an Advertisement Image</a>
+      </p>
+      
+      
+    <footer class="mt-5 pt-3 border-top text-center">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="120">
+        <p class="mt-2 mb-0 fw-semibold">Nilges Draher LLC</p>
+        <p class="mb-0 text-muted">7034 Braucher St NW, North Canton, OH</p>
+        <p class="text-muted small">(234) 401-9130 · <a href="https://ohlaborlaw.com">ohlaborlaw.com</a></p>
+    </footer>
+</div>
+{% endblock %}
