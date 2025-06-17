@@ -4,3 +4,4 @@ WTForms
 Pillow
 gspread
 google-auth
+gunicorn
