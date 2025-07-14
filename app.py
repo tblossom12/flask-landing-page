@@ -49,11 +49,19 @@ def create_ad():
     form = AdForm()
     if form.validate_on_submit():
         filepath = generate_ad_image(
+            header=form.header.data,
             para1=form.paragraph1.data,
             para2=form.paragraph2.data,
-            sentence1="Nilges Draher LLC Attorneys are Admitted in Ohio",
-            sentence2="We obtained your information from data aggregators, resume databases, or publicly available sources to identify that you currently or previously held a position with " + form.company_name.data,
-            company=form.company_name.data
+            subtext1=form.subtext1.data,
+            subtext2=form.subtext2.data,
+            footer=form.footer.data,
+            header_color=form.header_color.data,
+            para1_color=form.para1_color.data,
+            para2_color=form.para2_color.data,
+            subtext_color=form.subtext_color.data,
+            header_size=int(form.header_size.data),
+            paragraph_size=int(form.paragraph_size.data),
+            subtext_size=int(form.subtext_size.data)
         )
         return send_file(filepath, as_attachment=True)
     return render_template("create_ad.html", form=form)

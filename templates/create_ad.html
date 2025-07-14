@@ -5,10 +5,44 @@
   <h2 class="mb-4">Generate an Advertisement</h2>
   <form method="POST">
     {{ form.hidden_tag() }}
-    <div class="mb-3">{{ form.company_name.label }} {{ form.company_name(class="form-control") }}</div>
+  
+    <div class="mb-3">{{ form.header.label }} {{ form.header(class="form-control") }}</div>
     <div class="mb-3">{{ form.paragraph1.label }} {{ form.paragraph1(class="form-control", rows=2) }}</div>
     <div class="mb-3">{{ form.paragraph2.label }} {{ form.paragraph2(class="form-control", rows=2) }}</div>
+    <div class="mb-3">{{ form.subtext1.label }} {{ form.subtext1(class="form-control") }}</div>
+    <div class="mb-3">{{ form.subtext2.label }} {{ form.subtext2(class="form-control") }}</div>
+    <div class="mb-3">{{ form.footer.label }} {{ form.footer(class="form-control") }}</div>
+  
+    <hr>
+  
+    <div class="mb-3">
+      <label for="header_color">Header/Footer Color</label>
+      <input type="color" id="header_color" name="header_color" value="{{ form.header_color.data }}" class="form-control form-control-color">
+    </div>
+  
+    <div class="mb-3">
+      <label for="para1_color">Para1 Color</label>
+      <input type="color" id="para1_color" name="para1_color" value="{{ form.para1_color.data }}" class="form-control form-control-color">
+    </div>
+
+    <div class="mb-3">
+      <label for="para2_color">Para2 Color</label>
+      <input type="color" id="para2_color" name="para2_color" value="{{ form.para2_color.data }}" class="form-control form-control-color">
+    </div>
+  
+    <div class="mb-3">
+      <label for="subtext_color">Subtext Color</label>
+      <input type="color" id="subtext_color" name="subtext_color" value="{{ form.subtext_color.data }}" class="form-control form-control-color">
+    </div>
+  
+    <hr>
+  
+    <div class="mb-3">{{ form.header_size.label }} {{ form.header_size(class="form-control") }}</div>
+    <div class="mb-3">{{ form.paragraph_size.label }} {{ form.paragraph_size(class="form-control") }}</div>
+    <div class="mb-3">{{ form.subtext_size.label }} {{ form.subtext_size(class="form-control") }}</div>
+  
     <div>{{ form.submit(class="btn btn-primary w-100") }}</div>
   </form>
+  
 </div>
 {% endblock %}
