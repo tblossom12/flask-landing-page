@@ -6,7 +6,7 @@ class ContactForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired()])
     email = StringField("Email", validators=[DataRequired()])
     phone = StringField("Phone", validators=[DataRequired()])
-    claim = TextAreaField("Claim", validators=[DataRequired()])
+    claim = TextAreaField("Additional Information", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
 class LandingPageForm(FlaskForm):
