@@ -31,7 +31,13 @@ def generate():
     if form.validate_on_submit():
         path = form.custom_path.data.strip().lower().replace(" ", "-")
         existing = LandingPage.query.filter_by(path=path).first()
-        if not existing:
+        if existing:
+            existing.heading1 = form.heading1.data
+            existing.paragraph1 = form.paragraph1.data
+            existing.heading2 = form.heading2.data
+            existing.paragraph2 = form.paragraph2.data
+            db.session.commit()
+        else:
             page = LandingPage(
                 path=path,
                 heading1=form.heading1.data,
