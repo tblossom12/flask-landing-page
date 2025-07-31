@@ -11,18 +11,18 @@ class ContactForm(FlaskForm):
 
 class LandingPageForm(FlaskForm):
     custom_path = StringField("Page URL", validators=[DataRequired()])
-    heading1 = StringField("Heading 1", validators=[DataRequired()])
+    heading1 = TextAreaField("Heading 1", validators=[DataRequired()])
     paragraph1 = TextAreaField("Paragraph 1", validators=[DataRequired()])
-    heading2 = StringField("Heading 2", validators=[DataRequired()])
+    heading2 = TextAreaField("Heading 2", validators=[DataRequired()])
     paragraph2 = TextAreaField("Paragraph 2", validators=[DataRequired()])
     submit = SubmitField("Generate Landing Page")
 
 class AdForm(FlaskForm):
-    header = StringField("Header", validators=[DataRequired()])
+    header = TextAreaField("Header", validators=[DataRequired()])
     paragraph1 = TextAreaField("Paragraph 1", validators=[DataRequired()])
     paragraph2 = TextAreaField("Paragraph 2", validators=[DataRequired()])
-    subtext1 = StringField("Subtext 1", validators=[DataRequired()])
-    subtext2 = StringField("Subtext 2", validators=[DataRequired()])
+    subtext1 = TextAreaField("Subtext 1", validators=[DataRequired()])
+    subtext2 = TextAreaField("Subtext 2", validators=[DataRequired()])
     footer = StringField("Footer", validators=[DataRequired()])
 
     # Color pickers
