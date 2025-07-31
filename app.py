@@ -84,8 +84,6 @@ app.secret_key = "secret-key"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///landing_pages.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-with app.app_context():
-        db.create_all()
 
 # Database model
 class LandingPage(db.Model):
@@ -160,6 +158,8 @@ def create_ad():
         return send_file(filepath, as_attachment=True)
     return render_template("create_ad.html", form=form)
 
+with app.app_context():
+        db.create_all()
 if __name__ == "__main__":
     app.run(debug=True)
 
