@@ -165,7 +165,7 @@ from forms import ContactForm, LandingPageForm, AdForm
 from utils import generate_ad_image, save_to_google_sheet
 import os
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 
 ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'defaultpass')
 
@@ -179,7 +179,7 @@ landing_pages = {}
 def get_gsheet():
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     creds_path = os.environ.get("GOOGLE_CREDS_PATH", ".gitignore/google-creds.json")
-    creds = ServiceAccountCredentials.from_json_keyfile_name(creds_path, scope)
+    creds = Credentials.from_service_account_file(creds_path, scopes=scope)
     client = gspread.authorize(creds)
     return client.open_by_key("1lExmF-PJY7k9b25tIAr3_NmE0tD5ozw1uZcwE6Tb4ec").get_worksheet(1)
 

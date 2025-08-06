@@ -6,3 +6,4 @@ gspread
 google-auth
 gunicorn
 flask_sqlalchemy
+google-auth-oauthlib
