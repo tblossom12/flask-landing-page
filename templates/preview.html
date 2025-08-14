@@ -40,8 +40,30 @@
   </div>
 </div>
 
+<!-- Social Share Section -->
+<div class="share-section">
+    <p><strong>Help spread the word by sharing this page!</strong></p>
+    
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.url }}" target="_blank" title="Share on Facebook">
+        <img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook" class="share-icon">
+    </a>
+    
+    <!-- X / Twitter -->
+    <a href="https://twitter.com/intent/tweet?url={{ request.url }}&text=Check this out!" target="_blank" title="Share on X">
+        <img src="{{ url_for('static', filename='twitter.png') }}" alt="X" class="share-icon">
+    </a>
+    
+    <!-- Copy Link -->
+    <button class="share-btn" onclick="navigator.clipboard.writeText('{{ request.url }}'); alert('Link copied to clipboard!')">
+        <img src="{{ url_for('static', filename='copy.png') }}" alt="Copy Link" class="share-icon">
+    </button>
+</div>
+
 <!-- Advertising label at bottom -->
 <div class="text-center text-muted mt-5" style="font-size: 0.9rem; letter-spacing: 1px;">Advertising Material</div>
+
+
 
 <!-- Footer -->
 <footer class="mt-4 pt-4 text-center border-top">

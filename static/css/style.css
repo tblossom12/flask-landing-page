@@ -101,3 +101,32 @@ form {
   padding: 10px;
 }
 
+.share-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.share-section p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.share-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.share-icon:hover {
+    transform: scale(1.1);
+}
+
+.share-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
